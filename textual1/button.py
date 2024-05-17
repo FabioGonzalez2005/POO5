@@ -9,25 +9,20 @@ class ButtonsApp(App[str]):
     def compose(self) -> ComposeResult:
         yield Horizontal(
             VerticalScroll(
-                Static("Standard Buttons", classes="header"),
-                Button("Default"),
-                Button("Primary!", variant="primary"),
-                Button.success("Success!"),
-                Button.warning("Warning!"),
-                Button.error("Error!"),
-            ),
-            VerticalScroll(
-                Static("Disabled Buttons", classes="header"),
-                Button("Default", disabled=True),
-                Button("Primary!", variant="primary", disabled=True),
-                Button.success("Success!", disabled=True),
-                Button.warning("Warning!", disabled=True),
-                Button.error("Error!", disabled=True),
+                Static("Saludar al mundo", classes="header"),
+                Button("Saludar"),
+                Button.error("Salir"),
             ),
         )
 
     def on_button_pressed(self, event: Button.Pressed) -> None:
-        self.exit(str(event.button))
+        ##self.exit(str(event.button))
+        self.notify(
+            "Desde el IES Haría"
+            "[b]El 1º Ciclo del Ciclo Superior[/b] saluda al mundo!",
+            title="Saludo",
+            severity="warning",
+        )
 
 
 if __name__ == "__main__":
