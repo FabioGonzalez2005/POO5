@@ -6,7 +6,7 @@ class Tarea:
 
     #Métodos CRUD
     def read(self)->str:
-        return self.id, self.tarea, self.estado
+        return f'{self.id}|&&|{self.tarea}|&&|{self.estado}'
 
     def update(self, idNueva:int, tareaNueva:str, estadoNuevo:bool)->None:
         self.id     = idNueva
