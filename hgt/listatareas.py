@@ -1,8 +1,13 @@
+from hgt.tarea import Tarea
+
 class ListaTareas:
     LIMITCHAR = "|&&|"
 
-    def __init__(self, lista:list):
-        self.lista = lista
+    def __init__(self, lista=None):
+        if lista is None:
+            self.tareas = []
+        else:
+            self.tareas = lista
 
     def agregar(self, tarea:Tarea):
         self.tareas.append(tarea)
@@ -13,7 +18,6 @@ class ListaTareas:
             result += tarea
             if tarea != self.tareas[-1]:
                 result += self.LIMITCHAR
-
         return result
     
     def load(self, data:str):
@@ -37,7 +41,7 @@ class ListaTareas:
         return self.read()
     
     def __len__(self):
-        return  self.tareas.__len__()
+        return len(self.tareas)
     
     def __getitem__(self, index):
         return self.tareas[index]
@@ -49,10 +53,7 @@ class ListaTareas:
         del self.tareas[index]
 
     def __iter__(self):
-        return self.tareas.__iter__()
-    
-    def __next__(self):
-        return self.tareas.__next__()
+        return iter(self.tareas)
     
     def __contains__(self, item):
         return item in self.tareas
