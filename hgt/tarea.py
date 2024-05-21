@@ -5,11 +5,11 @@ class Tarea:
         self.estado = estado
 
     #Métodos CRUD
-    def read(self):
-        pass
+    def read(self)->str:
+        return self.tarea
 
-    def update(self):
-        pass
-
+    def update(self, tarea)->None:
+        self.tarea = tarea
+        
     def delete(self):
-        pass
+        self.tarea = None
