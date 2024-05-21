@@ -1,5 +1,5 @@
-from listatareas import ListaTareas
 import pytest
+from hgt.listatareas import ListaTareas
 
 @pytest.fixture
 def lista():
