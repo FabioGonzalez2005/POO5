@@ -1,9 +1,9 @@
-from listatareas import ListaTareas
-from archivo import Archivo
+from hgt.listatareas import ListaTareas
+from hgt.archivo import Archivo
 import pytest
 import os
 
-FILENAME = 'lista.dat'
+FILENAME = 'lista.txt'
 DATA    = 'Mates' + ListaTareas.LIMITCHAR + 'Lengua'
 
 @pytest.fixture
