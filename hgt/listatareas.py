@@ -25,10 +25,12 @@ class ListaTareas:
         for tarea1 in tareas:
             self.tareas.append(tarea1)
     
-    def update(self, tarea1:Tarea, tarea:str):
+    def update(self, tarea1:Tarea, id:int, tarea:str, estado:bool):
         for a in self.tareas:
             if a == tarea1:
+                a.update(id)
                 a.update(tarea)
+                a.update(estado)
                 break
 
     def delete(self, tarea1:Tarea):
