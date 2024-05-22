@@ -9,7 +9,7 @@ class Evento(Tarea):
 
     #Métodos CRUD
     def read(self):
-        return f'{fechaInicio}'
+        return f'{self.fechaInicio}|&&|{self.horaInicio}|&&|{self.fechaFin}|&&|{self.horaFin}'
 
     def update(self):
         pass
