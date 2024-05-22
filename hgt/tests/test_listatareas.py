@@ -10,36 +10,36 @@ def test_listaTareas0(lista):
     assert len(lista) == 0
 
 def test_listaTareas1(lista):
-    lista.agregar('Juan')
+    lista.agregar('Mates')
     assert len(lista) == 1
 
-def test_listaAlumno2(lista):
-    lista.agregar('Juan')
-    lista.agregar('Pedro')
+def test_listaTarea2(lista):
+    lista.agregar('Mates')
+    lista.agregar('Lengua')
 
     assert len(lista) == 2
 
-    assert lista[0] == 'Juan'
-    assert lista[1] == 'Pedro'
+    assert lista[0] == 'Mates'
+    assert lista[1] == 'Lengua'
 
-def test_listaAlumnoDelete(lista):
-    lista.agregar('Luis')
-    assert lista[0] == 'Luis'
+def test_listaTareaDelete(lista):
+    lista.agregar('Informática')
+    assert lista[0] == 'Informática'
 
     del lista[0]
     assert len(lista) == 0
 
-    assert 'Luis' not in lista
+    assert 'Informática' not in lista
 
 def test_listaRead(lista):
-    lista.agregar('Juan')
-    lista.agregar('Pedro')
+    lista.agregar('Mates')
+    lista.agregar('Lengua')
 
-    assert lista.read() == 'Juan' + lista.LIMITCHAR + 'Pedro'
+    assert lista.read() == 'Mates' + lista.LIMITCHAR + 'Lengua'
 
 def test_listaLoad(lista):
-    lista.load('Juan' + lista.LIMITCHAR + 'Pedro')
+    lista.load('Mates' + lista.LIMITCHAR + 'Lengua')
     assert len(lista) == 2
 
-    assert lista[0] == 'Juan'
-    assert lista[1] == 'Pedro'
+    assert lista[0] == 'Mates'
+    assert lista[1] == 'Lengua'

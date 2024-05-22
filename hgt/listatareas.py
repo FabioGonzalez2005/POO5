@@ -9,31 +9,31 @@ class ListaTareas:
         else:
             self.tareas = lista
 
-    def agregar(self, tarea:Tarea):
-        self.tareas.append(tarea)
+    def agregar(self, tarea1:Tarea):
+        self.tareas.append(tarea1)
 
     def read(self):
         result = ""
-        for tarea in self.tareas:
-            result += tarea
-            if tarea != self.tareas[-1]:
+        for tarea1 in self.tareas:
+            result += tarea1
+            if tarea1 != self.tareas[-1]:
                 result += self.LIMITCHAR
         return result
     
     def load(self, data:str):
         tareas = data.split(self.LIMITCHAR)
-        for tarea in tareas:
-            self.tareas.append(tarea)
+        for tarea1 in tareas:
+            self.tareas.append(tarea1)
     
-    def update(self, tarea:Tarea, nombre:str):
+    def update(self, tarea1:Tarea, tarea:str):
         for a in self.tareas:
-            if a == tarea:
-                a.update(nombre)
+            if a == tarea1:
+                a.update(tarea)
                 break
 
-    def delete(self, tarea:Tarea):
+    def delete(self, tarea1:Tarea):
         for a in self.tareas:
-            if a == tarea:
+            if a == tarea1:
                 a.delete()
                 break
 
