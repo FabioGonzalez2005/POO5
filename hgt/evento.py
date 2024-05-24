@@ -21,6 +21,7 @@ class Evento(Tarea):
         self.horaFin     = horaFin
 
     def delete(self):
+        super().delete()
         self.fechaInicio = None
         self.horaInicio  = None
         self.fechaFin    = None
