@@ -5,12 +5,11 @@ from textual.widgets import Footer
 
 class FooterApp(App):
     BINDINGS = [
-        Binding(key="q", action="quit", description="Quit the app"),
+        Binding(key="q", action="quit", description="Salir"),
         Binding(
-            key="question_mark",
+            key="e",
             action="help",
-            description="Show help s???creen",
-            key_display="?",
+            description="Editar"
         ),
         Binding(key="delete", action="delete", description="Delete the thing"),
         Binding(key="j", action="down", description="Scroll down", show=False),
