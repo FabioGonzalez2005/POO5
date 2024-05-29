@@ -1,6 +1,6 @@
 from textual.app import App, ComposeResult
-from textual.containers import Horizontal, VerticalScroll
-from textual.widgets import Button, Static
+from textual.containers import Horizontal
+from textual.widgets import Button
 
 
 class ButtonsApp(App[str]):
