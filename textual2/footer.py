@@ -11,8 +11,17 @@ class FooterApp(App):
             action="help",
             description="Editar"
         ),
-        Binding(key="delete", action="delete", description="Delete the thing"),
-        Binding(key="j", action="down", description="Scroll down", show=False),
+        Binding(
+            key="n",
+            action="help2",
+            description="Nuevo"
+        ),
+        Binding(
+            key="b",
+            action="help3",
+            description="Borrar"
+        ),
+
     ]
 
     def compose(self) -> ComposeResult:
