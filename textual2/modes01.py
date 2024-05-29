@@ -1,35 +1,43 @@
 from textual.app import App, ComposeResult
 from textual.screen import Screen
-from textual.widgets import Footer, Placeholder
+from textual.widgets import Placeholder, Button
 
 
-class DashboardScreen(Screen):
+class MainScreen(Screen):
     def compose(self) -> ComposeResult:
-        yield Placeholder("Dashboard Screen")
-        yield Footer()
+        yield Placeholder("Pantalla Principal")
+        yield Button("Edición")
 
+    def on_button_pressed(self, event: Button.Pressed) -> None:
+        self.app.switch_to_edit()
 
-class SettingsScreen(Screen):
+class EditScreen(Screen):
     def compose(self) -> ComposeResult:
-        yield Placeholder("Settings Screen")
-        yield Footer()
+        yield Placeholder("Pantalla Edición")
+        yield Button("Principal")
 
+    def on_button_pressed(self, event: Button.Pressed) -> None:
+        self.app.switch_to_main()
 
 
 class ModesApp(App):
     BINDINGS = [
-        ("d", "switch_mode('dashboard')", "Dashboard"),  
-        ("s", "switch_mode('settings')", "Settings"),
-        ("h", "switch_mode('help')", "Help"),
+        ("m", "switch_mode('main')", "Principal"),  
+        ("e", "switch_mode('edit')", "Edición"),
     ]
     MODES = {
-        "dashboard": DashboardScreen,  
-        "settings": SettingsScreen,
-        "help": HelpScreen,
+        "main": MainScreen,  
+        "edit": EditScreen,
     }
 
     def on_mount(self) -> None:
-        self.switch_mode("dashboard")  
+        self.switch_mode("main")
+
+    def switch_to_edit(self) -> None:
+        self.switch_mode("edit")
+
+    def switch_to_main(self) -> None:
+        self.switch_mode("main")
 
 
 if __name__ == "__main__":
