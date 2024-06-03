@@ -9,3 +9,5 @@ SQLMDLCREATE = '''
 '''
 
 con = sqlite3.connect('citas.db')
+
+con.close()
